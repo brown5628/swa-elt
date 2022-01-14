@@ -15,7 +15,7 @@ def get_date():
 
 @op
 def hello(name:str, date:str):
-    logger.info("It worked!")
+    logger.info("It worked! Test!")
     print(f"Hello, {name}! This is dagster on {date}.")
 
 
