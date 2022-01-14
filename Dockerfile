@@ -1,12 +1,20 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.8-slim-buster
+FROM python:3.9-slim
 
-WORKDIR /app
+RUN mkdir -p /opt/dagster/dagster_home /opt/dagster/app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-COPY . .
+COPY . /opt/dagster/app/
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+ENV DAGSTER_HOME=/opt/dagster/dagster_home/
+
+COPY dagster.yaml /opt/dagster/dagster_home/
+
+WORKDIR /opt/dagster/app
+
+EXPOSE 5000
+
+ENTRYPOINT ["bash", "startup.sh"]

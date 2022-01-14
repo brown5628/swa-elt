@@ -1,0 +1,47 @@
+run_storage:
+  module: dagster_postgres.run_storage
+  class: PostgresRunStorage
+  config:
+    postgres_db:
+      username: 
+        env: POSTGRES_DB_USER
+      password: 
+        env: POSTGRES_DB_PASSWORD
+      hostname: 
+        env: POSTGRES_DB_HOSTNAME
+      db_name: 
+        env: POSTGRES_DB_NAME
+      port: 
+        env: POSTGRES_DB_PORT
+
+event_log_storage:
+  module: dagster_postgres.event_log
+  class: PostgresEventLogStorage
+  config:
+    postgres_db:
+      username: 
+        env: POSTGRES_DB_USER
+      password: 
+        env: POSTGRES_DB_PASSWORD
+      hostname: 
+        env: POSTGRES_DB_HOSTNAME
+      db_name: 
+        env: POSTGRES_DB_NAME
+      port: 
+        env: POSTGRES_DB_PORT
+
+schedule_storage:
+  module: dagster_postgres.schedule_storage
+  class: PostgresScheduleStorage
+  config:
+    postgres_db:
+      username: 
+        env: POSTGRES_DB_USER
+      password: 
+        env: POSTGRES_DB_PASSWORD
+      hostname: 
+        env: POSTGRES_DB_HOSTNAME
+      db_name: 
+        env: POSTGRES_DB_NAME
+      port: 
+        env: POSTGRES_DB_PORT
