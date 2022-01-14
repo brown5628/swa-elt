@@ -2,5 +2,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gsutil'  
     args: ['cp', 'gs://small-world-analytics-secrets/.env', '.']
   - name: "gcr.io/cloud-builders/docker"
-    args: ['build', '-t', 'gcr.io/small-world-analytics/us-east1-docker.pkg.dev/small-world-analytics/small-world-analytics/swa-elt:latest', '.']
+    args: ['build', '-t', 'us-east1-docker.pkg.dev/small-world-analytics/small-world-analytics/swa-elt:latest', '.']
+images:
+  - 'us-east1-docker.pkg.dev/small-world-analytics/small-world-analytics/swa-elt:latest'
 timeout: "1600s"
