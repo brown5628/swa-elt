@@ -1,7 +1,7 @@
 from dagster import job, op, repository, schedule, ScheduleDefinition
 from dagster.utils.log import get_dagster_logger
-#from dagster_gcp.gcs.io_manager import gcs_pickle_io_manager
-#from dagster_gcp.gcs.resources import gcs_resource
+from dagster_gcp.gcs.io_manager import gcs_pickle_io_manager
+from dagster_gcp.gcs.resources import gcs_resource
 
 logger = get_dagster_logger()
 
@@ -15,27 +15,26 @@ def get_date():
 
 @op
 def hello(name:str, date:str):
-    logger.info("It worked! Test!")
+    logger.info("It worked! Test! Test local!")
     print(f"Hello, {name}! This is dagster on {date}.")
 
 
-#@job(
-#    resource_defs={
-#        "gcs": gcs_resource,
-#        "io_manager": gcs_pickle_io_manager,
-#    },
-#    config={
-#        "resources": {
-#            "io_manager": {
-#                "config": {
-#                    "gcs_bucket": "small-world-dagster",
-#                    "gcs_prefix": "dagster-logs-",
-#                }
-#            }
-#        }
-#    },
-#)
-@job
+@job(
+    resource_defs={
+        "gcs": gcs_resource,
+        "io_manager": gcs_pickle_io_manager,
+    },
+    config={
+        "resources": {
+            "io_manager": {
+                "config": {
+                    "gcs_bucket": "small-world-dagster",
+                    "gcs_prefix": "dagster-logs",
+                }
+            }
+        }
+    },
+)
 def hello_dagster():
     hello(get_name(),get_date())
 
