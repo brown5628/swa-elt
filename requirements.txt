@@ -5,3 +5,4 @@ dagster-gcp
 bs4
 pandas
 lxml
+pyarrow
