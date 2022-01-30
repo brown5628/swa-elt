@@ -2,3 +2,5 @@ dagster
 dagit
 dagster-postgres
 dagster-gcp
+pandas
+pyarrow
