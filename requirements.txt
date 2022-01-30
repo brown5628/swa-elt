@@ -2,7 +2,5 @@ dagster
 dagit
 dagster-postgres
 dagster-gcp
-bs4
 pandas
-lxml
 pyarrow
