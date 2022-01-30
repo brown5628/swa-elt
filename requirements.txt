@@ -4,3 +4,4 @@ dagster-postgres
 dagster-gcp
 pandas
 pyarrow
+feedparser
