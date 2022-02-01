@@ -5,3 +5,5 @@ dagster-gcp
 pandas
 pyarrow
 feedparser
+dbt-core
+dbt-bigquery
