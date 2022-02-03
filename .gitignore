@@ -132,3 +132,5 @@ dmypy.json
 cheatsheet.md
 temp.ipynb
 .dbt/
+.logs_queue/
+.telemetry/

@@ -84,8 +84,7 @@ def batch_el():
     execution_timezone="US/Central",
 )
 def swa_elt_schedule(context):
-    date = context.scheduled_execution_time.strftime("%Y-%m-%d")
-    return {"ops": {"hello": {"config": {"date": date}}}}
+    return {}
 
 @repository
 def swa_elt_repository():
